@@ -1,0 +1,39 @@
+project_name: Full-Stack Automation Orchestrator
+environment: local
+fail_fast: true
+
+reporting:
+  output_dir: reports/orchestrator
+  history_dir: reports/orchestrator/history
+  safe_share: true
+  update_history_file: true
+  open_report: false
+
+targets:
+  api-smoke:
+    platform: api
+    repo_path: ../api-automation-framework
+    command: ["python", "framework.py", "run", "--env", "mock", "--smoke", "--no-open-report"]
+    report_root: reports/automation-report
+    timeout_seconds: 900
+    metadata:
+      component: api-smoke
+
+  web-smoke:
+    platform: web
+    repo_path: ../web-automation-framework
+    command: ["python", "framework.py", "run", "--env", "qa", "--browser", "chromium", "--smoke", "--no-open-report"]
+    report_root: reports/automation-report
+    timeout_seconds: 1200
+    metadata:
+      component: web-smoke
+      browser: chromium
+
+  mobile-helper-smoke:
+    platform: mobile
+    repo_path: ../mobile-automation-framework
+    command: ["python", "framework.py", "run", "--helpers", "--no-open-report", "--no-generate-report"]
+    report_root: reports/automation-report
+    timeout_seconds: 900
+    metadata:
+      component: mobile-helper-smoke

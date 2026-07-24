@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "full-stack-automation-orchestrator"
+version = "0.1.0"
+description = "Cross-platform E2E automation orchestration for Web, Mobile, and API frameworks."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "ismailisleem" }]
+keywords = ["automation", "pytest", "e2e", "orchestration", "web", "mobile", "api"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "automation-core @ git+https://github.com/ismailisleem/automation-core.git@b3cccaa01f86ae75e50285132c527f0a3b1604c7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9.0",
+    "ruff>=0.6,<1.0",
+    "build>=1.2,<2.0",
+]
+
+[project.scripts]
+full-stack-orchestrator = "full_stack_automation_orchestrator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ismailisleem/full-stack-automation-orchestrator"
+Repository = "https://github.com/ismailisleem/full-stack-automation-orchestrator"
+Issues = "https://github.com/ismailisleem/full-stack-automation-orchestrator/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+full_stack_automation_orchestrator = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "examples"]
+pythonpath = ["src"]
+addopts = "-ra"
+markers = [
+    "e2e: end-to-end orchestrator samples",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+src = ["src", "tests", "examples"]
+
+[tool.ruff.lint]
+select = ["E9", "F", "I", "UP", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

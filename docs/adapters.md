@@ -13,7 +13,7 @@ adapter = SubprocessFrameworkAdapter("web")
 result = adapter.run_plan(
     RunPlan(
         name="web-smoke",
-        command=["python", "framework.py", "run", "--env", "qa", "--browser", "chromium"],
+        command=[".venv/bin/python", "framework.py", "run", "--env", "qa", "--browser", "chromium"],
         cwd="../web-automation-framework",
     ),
     context,

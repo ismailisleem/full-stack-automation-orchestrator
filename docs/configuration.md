@@ -18,7 +18,7 @@ targets:
   api-smoke:
     platform: api
     repo_path: ../api-automation-framework
-    command: ["python", "framework.py", "run", "--env", "mock", "--smoke", "--no-open-report"]
+    command: [".venv/bin/python", "framework.py", "run", "--env", "mock", "--smoke", "--no-open-report"]
 ```
 
 ## Target Fields
@@ -31,3 +31,5 @@ targets:
 - `timeout_seconds`: phase timeout.
 - `report_root`: framework report root used as an artifact reference.
 - `metadata`: extra labels shown in the orchestrator report.
+
+Use each framework's own virtual environment in real plans, for example `.venv/bin/python`. This keeps dependencies isolated and avoids importing all framework packages into the orchestrator process.

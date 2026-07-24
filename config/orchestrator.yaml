@@ -13,7 +13,7 @@ targets:
   api-smoke:
     platform: api
     repo_path: ../api-automation-framework
-    command: ["python", "framework.py", "run", "--env", "mock", "--smoke", "--no-open-report"]
+    command: [".venv/bin/python", "framework.py", "run", "--env", "mock", "--smoke", "--no-open-report"]
     report_root: reports/automation-report
     timeout_seconds: 900
     metadata:
@@ -22,7 +22,7 @@ targets:
   web-smoke:
     platform: web
     repo_path: ../web-automation-framework
-    command: ["python", "framework.py", "run", "--env", "qa", "--browser", "chromium", "--smoke", "--no-open-report"]
+    command: [".venv/bin/python", "framework.py", "run", "--env", "qa", "--browser", "chromium", "--smoke", "--no-open-report"]
     report_root: reports/automation-report
     timeout_seconds: 1200
     metadata:
@@ -32,7 +32,7 @@ targets:
   mobile-helper-smoke:
     platform: mobile
     repo_path: ../mobile-automation-framework
-    command: ["python", "framework.py", "run", "--helpers", "--no-open-report", "--no-generate-report"]
+    command: [".venv/bin/python", "framework.py", "run", "--helpers", "--no-open-report", "--no-generate-report"]
     report_root: reports/automation-report
     timeout_seconds: 900
     metadata:

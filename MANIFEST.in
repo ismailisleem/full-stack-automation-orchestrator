@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+recursive-include docs *.md *.py
+recursive-include config *.yaml
+recursive-include examples *.py
+recursive-include tests *.py
+recursive-include templates *

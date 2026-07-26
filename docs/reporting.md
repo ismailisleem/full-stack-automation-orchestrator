@@ -16,3 +16,12 @@ The orchestrator does not delete old runs. Every generated run gets a timestampe
 ## Report Data
 
 The neutral `report-data.json` sidecar is the best validation target for automated checks. The HTML is for people; the JSON sidecar is for assertions and integrations.
+
+## Visual QA
+
+When reviewing generated HTML, use Playwright bundled Chromium or another non-system-Chrome renderer. Check both desktop and mobile widths for:
+
+- Horizontal page overflow.
+- Clipped table headings or run IDs.
+- Cards that overlap or resize unexpectedly.
+- Missing artifacts or broken links.

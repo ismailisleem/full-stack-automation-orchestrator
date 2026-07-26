@@ -22,7 +22,7 @@ classifiers = [
     "Topic :: Software Development :: Testing",
 ]
 dependencies = [
-    "automation-core @ git+https://github.com/ismailisleem/automation-core.git@b3cccaa01f86ae75e50285132c527f0a3b1604c7",
+    "automation-core @ git+https://github.com/ismailisleem/automation-core.git@v0.12.1",
 ]
 
 [project.optional-dependencies]

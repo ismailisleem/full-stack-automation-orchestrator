@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import shutil
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -77,6 +78,7 @@ def run_config_preflight(config: OrchestratorConfig, *, base_dir: str | Path | N
                     metadata={"platform": target.platform},
                 )
             )
+            checks.append(_command_executable_check(target.name, target.platform, repo_path, target.command))
         else:
             checks.append(
                 PreflightCheck(
@@ -98,6 +100,30 @@ def run_config_preflight(config: OrchestratorConfig, *, base_dir: str | Path | N
             )
 
     return PreflightResult(tuple(checks))
+
+
+def _command_executable_check(
+    target_name: str,
+    platform: str,
+    repo_path: Path,
+    command: Sequence[str],
+) -> PreflightCheck:
+    executable = command[0]
+    executable_path = Path(executable).expanduser()
+    if executable_path.is_absolute() or executable_path.parent != Path("."):
+        resolved = executable_path if executable_path.is_absolute() else repo_path / executable_path
+        status = "passed" if resolved.exists() else "failed"
+        message = str(resolved)
+    else:
+        resolved = shutil.which(executable)
+        status = "passed" if resolved else "failed"
+        message = resolved or f"{executable} was not found on PATH"
+    return PreflightCheck(
+        name=f"{target_name} executable",
+        status=status,
+        message=message,
+        metadata={"platform": platform},
+    )
 
 
 def _resolve(root: Path, path: str) -> Path:

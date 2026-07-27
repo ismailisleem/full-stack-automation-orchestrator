@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Added the official branch-aware coverage gate and CI coverage command.
+- Updated the automation-core dependency to `v0.12.2`.
+- Refreshed report walkthrough screenshots with the latest portfolio wording.
+
 ## 0.1.0
 
 - Initial Full-Stack Automation Orchestrator release.

@@ -15,7 +15,7 @@ Pin `automation-core` to a public tag for user-facing releases. Avoid publishing
 Example:
 
 ```toml
-"automation-core @ git+https://github.com/ismailisleem/automation-core.git@v0.12.1"
+"automation-core @ git+https://github.com/ismailisleem/automation-core.git@v0.12.2"
 ```
 
 ## Local Release Checklist
@@ -23,7 +23,7 @@ Example:
 ```bash
 ruff check .
 ruff format --check .
-pytest
+pytest --cov=full_stack_automation_orchestrator --cov-report=term-missing
 python -m build
 full-stack-orchestrator run-sample all --output reports/orchestrator
 ```

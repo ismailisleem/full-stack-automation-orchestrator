@@ -34,7 +34,7 @@ jobs:
           ruff format --check .
 
       - name: Pytest
-        run: pytest
+        run: pytest --cov=full_stack_automation_orchestrator --cov-report=term-missing
 
       - name: Build package
         run: python -m build

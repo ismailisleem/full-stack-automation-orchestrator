@@ -216,7 +216,7 @@ assert result.passed
 ```bash
 ruff check .
 ruff format --check .
-pytest
+pytest --cov=full_stack_automation_orchestrator --cov-report=term-missing
 python -m build
 ```
 
@@ -229,7 +229,7 @@ full-stack-orchestrator run-plan --config config/orchestrator.yaml --target web-
 full-stack-orchestrator run-plan --config config/orchestrator.yaml --target mobile-helper-smoke
 ```
 
-This repo does not publish a coverage number yet. CI runs linting, formatting, unit tests, package build, wheel smoke validation, and a sample report smoke.
+The official coverage gate is branch-aware and currently requires at least 80% coverage. CI runs linting, formatting, coverage, package build, wheel smoke validation, and a sample report smoke.
 
 ## Known Limitations
 

@@ -105,7 +105,7 @@ python -m pip install -e ".[dev]"
 Install from GitHub for a released tag:
 
 ```bash
-python -m pip install "full-stack-automation-orchestrator @ git+https://github.com/ismailisleem/full-stack-automation-orchestrator.git@v0.1.0"
+python -m pip install "full-stack-automation-orchestrator @ git+https://github.com/ismailisleem/full-stack-automation-orchestrator.git@v0.1.1"
 ```
 
 Run the built-in examples. They use lightweight demo adapters, so they do not require browsers, devices, Appium, or live services.

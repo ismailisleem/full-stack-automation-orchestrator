@@ -5,9 +5,11 @@ Run local validation before opening or merging a pull request:
 ```bash
 ruff check .
 ruff format --check .
-pytest
+pytest --cov=full_stack_automation_orchestrator --cov-report=term-missing
 python -m build
 ```
+
+The coverage command is the official local and CI gate. It uses branch-aware coverage and fails below 80%.
 
 When report behavior changes, also generate sample reports:
 

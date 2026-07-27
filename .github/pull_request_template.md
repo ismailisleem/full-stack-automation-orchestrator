@@ -10,7 +10,7 @@
 
 - [ ] `ruff check .`
 - [ ] `ruff format --check .`
-- [ ] `pytest`
+- [ ] `pytest --cov=full_stack_automation_orchestrator --cov-report=term-missing`
 - [ ] `python -m build`
 - [ ] `full-stack-orchestrator run-sample all --output reports/orchestrator`
 

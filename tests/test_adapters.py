@@ -20,7 +20,7 @@ def test_subprocess_adapter_captures_logs(tmp_path):
     result = adapter.run_plan(
         RunPlan(
             name="python-smoke",
-            command=[sys.executable, "-c", "print('hello')"],
+            command=[sys.executable, "-S", "-c", "print('hello')"],
             cwd=tmp_path,
         ),
         context,

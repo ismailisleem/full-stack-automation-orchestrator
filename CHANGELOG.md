@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Updated the automation-core dependency to `v0.13.0`, which adds the Test Lineage report (compare and trend runs by their shared test set) on top of the platform-centric report design.
+
 ## 0.1.1
 
 - Added the official branch-aware coverage gate and CI coverage command.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Updated the automation-core dependency to `v0.13.1`, which enhances the Test Lineage report: the Lineage Pass Rate Trend measures pass rate over the lineage common core, tooltips expose both shared and full pass rate, and trend points link to their run's report.
+
 ## 0.1.2
 
 - Updated the automation-core dependency to `v0.13.0`, which adds the Test Lineage report (compare and trend runs by their shared test set) on top of the platform-centric report design.

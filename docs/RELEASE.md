@@ -15,7 +15,7 @@ Pin `automation-core` to a public tag for user-facing releases. Avoid publishing
 Example:
 
 ```toml
-"automation-core @ git+https://github.com/ismailisleem/automation-core.git@v0.13.0"
+"automation-core @ git+https://github.com/ismailisleem/automation-core.git@v0.13.1"
 ```
 
 ## Local Release Checklist
